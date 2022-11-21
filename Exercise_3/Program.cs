@@ -95,7 +95,7 @@ namespace Exercise_Linked_List_A
             previous = null;
             current = LAST.next;
 
-            while(LAST.next <= || previous = LAST)
+            while(current <=  || previous = LAST)
             {
                 if(rollNo== current.rollNumber)
                 {
@@ -103,12 +103,12 @@ namespace Exercise_Linked_List_A
                     return;
                 }
                 previous.next = current;
-                previous.next = newnode;
+                current.next = newnode;
             }
             newnode.next = current;
             previous.next = newnode;
         }
-        public bool delNode()
+        public bool delNode(int rollNO)
         {
 
         }

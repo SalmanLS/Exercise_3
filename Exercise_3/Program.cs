@@ -92,10 +92,10 @@ namespace Exercise_Linked_List_A
             }
 
             Node previous, current;
-            previous = LAST.next;
+            previous = null;
             current = LAST.next;
 
-            while((current!= null) && (rollNo >= current.rollNumber))
+            while(LAST.next <= || previous = LAST)
             {
                 if(rollNo== current.rollNumber)
                 {
@@ -108,6 +108,10 @@ namespace Exercise_Linked_List_A
             newnode.next = current;
             previous.next = newnode;
         }
+        public bool delNode()
+        {
+
+        }
         static void Main(string[] args)
         {
             CircularList obj = new CircularList();
@@ -119,7 +123,8 @@ namespace Exercise_Linked_List_A
                     Console.WriteLine("1. View all the records in the list");
                     Console.WriteLine("2. Search for a record in the list");
                     Console.WriteLine("3. Display the first record in the list");
-                    Console.WriteLine("4. Exit");
+                    Console.WriteLine("4. Add a record to the list");
+                    Console.WriteLine("6. Exit");
                     Console.Write("\n Enter your choice (1-4): ");
                     char ch = Convert.ToChar(Console.Read());
                     switch (ch)
@@ -157,6 +162,11 @@ namespace Exercise_Linked_List_A
                             }
                             break;
                         case '4':
+                            {
+                                obj.addNode();
+                            }
+                            break;
+                        case '5':
                             return;
                         default:
                             {

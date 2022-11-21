@@ -30,6 +30,12 @@ namespace Exercise_Linked_List_A
                 return (false);
         }
 
-
+        public bool listEmpty()
+        {
+            if (LAST == null)
+                return true;
+            else
+                return false;
+        }
     }
 }

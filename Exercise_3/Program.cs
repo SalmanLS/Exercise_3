@@ -110,7 +110,10 @@ namespace Exercise_Linked_List_A
         }
         public bool delNode(int rollNO)
         {
+            if(listEmpty() == false)
+            {
 
+            }
         }
         static void Main(string[] args)
         {

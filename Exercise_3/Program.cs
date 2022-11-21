@@ -8,4 +8,8 @@ namespace Exercise_Linked_List_A
         public string name;
         public Node next;
     }
+    class CircularList
+    {
+
+    }
 }

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Security;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Exercise_Linked_List_A
 {
@@ -26,7 +29,7 @@ namespace Exercise_Linked_List_A
             }
             if (rollNo == LAST.rollNumber)
                 return true;
-            else 
+            else
                 return (false);
         }
 
@@ -47,7 +50,7 @@ namespace Exercise_Linked_List_A
                 Console.WriteLine("\n Records in the list are: \n");
                 Node currentNode;
                 currentNode = LAST.next;
-                while(currentNode != LAST)
+                while (currentNode != LAST)
                 {
                     Console.Write(currentNode.rollNumber + "   " + currentNode.name + "\n");
                 }
@@ -64,6 +67,47 @@ namespace Exercise_Linked_List_A
                     LAST.next.rollNumber + "   " + LAST.next.name);
         }
 
+        public void addNode()
+        {
+            int rollNo;
+            string nm;
+            Console.Write("\n Enter the roll number of the student: ");
+            rollNo = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n Enter the roll name of the student: ");
+            nm = Console.ReadLine();
+            Node newnode = new Node();
+            newnode.rollNumber = rollNo;
+            newnode.name = nm;
+            // the beginning of the node
+            if (LAST.next != null || (rollNo <= LAST.next.rollNumber))
+            {
+                if((LAST.next != null) && (rollNo == LAST.next.rollNumber))
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                newnode.next = LAST.next;
+                LAST.next = newnode;
+                return;
+            }
+
+            Node previous, current;
+            previous = LAST.next;
+            current = LAST.next;
+
+            while((current!= null) && (rollNo >= current.rollNumber))
+            {
+                if(rollNo== current.rollNumber)
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                previous.next = current;
+                previous.next = newnode;
+            }
+            newnode.next = current;
+            previous.next = newnode;
+        }
         static void Main(string[] args)
         {
             CircularList obj = new CircularList();
